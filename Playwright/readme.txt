@@ -1,0 +1,1 @@
+This repo/folder is. created to cover the journeuy of Learning Path of Playwright Automation
