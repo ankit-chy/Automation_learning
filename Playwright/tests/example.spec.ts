@@ -16,3 +16,5 @@ test('get started link', async ({ page }) => {
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
+
+// test words with js , Learning JS for the first time, and learning JS for the second time. also playwright is a testing framework for web applications. It allows developers to write tests in JavaScript or TypeScript to automate browser interactions and verify the behavior of web pages. Playwright supports multiple browsers, including Chromium, Firefox, and WebKit, making it a versatile tool for end-to-end testing.ß
