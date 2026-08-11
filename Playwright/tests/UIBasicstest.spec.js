@@ -17,10 +17,10 @@ test('First Playwright Test', async ({browser}) => // fat operator function exam
 
 })
  
-test('Page fixture Playwright Test', async ({browser, page}) => // fat operator function example and {browser} is global fixture provided by playwright test runner
+test('SecondPage fixture Playwright Test', async ({page}) => // fat operator function example and {page} is global fixture provided by playwright test runner
 {
     // Playwright UI or API Code
     // no need to create new context and page as page is already provided by playwright test runner
-    await page.goto('https://rahulshettyacademy.com/loginpagePractise/'); // navigate to the URL
+    await page.goto('https://google.com'); // navigate to the URL
 
 })
