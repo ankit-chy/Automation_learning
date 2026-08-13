@@ -1,4 +1,4 @@
-const {test} = require('@playwright/test');
+const { test, expect } = require('@playwright/test');
 
 // test('First Playwright Test', async function()
 // {
@@ -22,5 +22,25 @@ test('SecondPage fixture Playwright Test', async ({page}) => // fat operator fun
     // Playwright UI or API Code
     // no need to create new context and page as page is already provided by playwright test runner
     await page.goto('https://google.com'); // navigate to the URL
+   // await page.screenshot({path: 'screenshot.png'}); // take screenshot of the page
+   // await clickButton(page,'search'); // click on the search button
 
 })
+
+test.only('searches Google, opens Playwright, and extracts page text', async ({ page }) => {
+    await page.goto('https://www.google.com/');
+
+    const searchBox = page.locator('textarea[name="q"], input[name="q"]');
+    await searchBox.fill('Playwright official website');
+    await searchBox.press('Enter');
+
+    // Open the official site from the Google results page.
+    await page.locator('a[href*="playwright.dev"]').first().click();
+    await expect(page).toHaveURL(/playwright\.dev/);
+
+    // Extract the text shown on the Playwright homepage.
+    const pageText = await page.locator('main').innerText();
+    console.log(pageText);
+
+    await expect(pageText).toContain('Playwright');
+});
