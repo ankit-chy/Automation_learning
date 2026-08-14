@@ -14,7 +14,9 @@ const config =  ({
 
   use: {
 
-    browserName: 'chromium',
+   //browserName: 'chromium',
+    browerName: 'webkit',
+    headless: false, // run tests in headless mode or not
 
   },
 });
