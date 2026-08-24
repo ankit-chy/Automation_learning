@@ -1,4 +1,4 @@
-const { test, expect } = require('@playwright/test');
+const { test, expect } = require("@playwright/test");
 
 // test('First Playwright Test', async function()
 // {
@@ -6,28 +6,32 @@ const { test, expect } = require('@playwright/test');
 
 // })
 
-test('First Playwright Test', async ({browser}) => // fat operator function example and {browser} is global fixture provided by playwright test runner
-{
-    // Playwright UI or API Code
+test("First Playwright Test", async ({ browser }) => { // fat operator function example and {browser} is global fixture provided by playwright test runner
+  // Playwright UI or API Code
 
-    const context = await browser.newContext(); // create new browser context
-    const page = await context.newPage(); // create new page in the context
+  const context = await browser.newContext(); // create new browser context
+  const page = await context.newPage(); // create new page in the context
 
-    await page.goto('https://rahulshettyacademy.com/loginpagePractise/'); // navigate to the URL
+  await page.goto("https://rahulshettyacademy.com/loginpagePractise/"); // navigate to the URL
+});
 
-})
- 
-test.only('Second Test', async ({page}) => // fat operator function example and {page} is global fixture provided by playwright test runner
-{
-    // Playwright UI or API Code
-    // no need to create new context and page as page is already provided by playwright test runner
-    await page.goto('https://google.com'); // navigate to the URL
+test.only("Second Test", async ({ page }) => { // fat operator function example and {page} is global fixture provided by playwright test runner
+  // Playwright UI or API Code
+  // no need to create new context and page as page is already provided by playwright test runner
+  await page.goto("https://google.com"); // navigate to the URL
 
-    await console.log('The Page Title is: ' + await page.title()); // get the title of the page
+  await console.log("The Page Title is: " + (await page.title())); // get the title of the page
 
-   await expect(page).toHaveTitle('Google'); // assert the title of the page
+  await expect(page).toHaveTitle("Google"); // assert the title of the page
 
-})
+  await page.goto("https://rahulshettyacademy.com/loginpagePractise/"); // navigate to the URL
+
+  await page.locator("#username").type("rahulshettyacademy"); // type in the username field
+  console.log("Entered Username : " + (await page.locator("#username").inputValue()));
+  await page.locator("#password").type("learning"); // type in the password field   
+  console.log("Entered Password : " + (await page.locator("#password").inputValue()));
+
+});
 
 // test.only('searches Google, opens Playwright, and extracts page text', async ({ page }) => {
 //     await page.goto('https://www.google.com/');
