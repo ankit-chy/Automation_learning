@@ -1,4 +1,4 @@
-const { test, expect } = require("@playwright/test");
+ const { test, expect } = require("@playwright/test");
 
 // test('First Playwright Test', async function()
 // {
@@ -33,20 +33,3 @@ test.only("Second Test", async ({ page }) => { // fat operator function example 
 
 });
 
-// test.only('searches Google, opens Playwright, and extracts page text', async ({ page }) => {
-//     await page.goto('https://www.google.com/');
-
-//     const searchBox = page.locator('textarea[name="q"], input[name="q"]');
-//     await searchBox.fill('Playwright official website');
-//     await searchBox.press('Enter');
-
-//     // Open the official site from the Google results page.
-//     await page.locator('a[href*="playwright.dev"]').first().click();
-//     await expect(page).toHaveURL(/playwright\.dev/);
-
-//     // Extract the text shown on the Playwright homepage.
-//     const pageText = await page.locator('main').innerText();
-//     console.log(pageText);
-
-//     await expect(pageText).toContain('Playwright');
-// });
